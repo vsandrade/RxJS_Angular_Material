@@ -1,34 +1,33 @@
 import { from, Observable } from "rxjs";
 
-let numbers = [1,5,10];
-let source = from(numbers);
+let numbers = [1,5,10,15,20,25,30];
 
-
-let sourceInstance = new Observable(subscriber => {
-  for (let n of numbers) {
-    if (n > 5) {
-      subscriber.error('Aconteceu um erro esperado!');
+let source = new Observable(subscriber => {
+  let index = 0;
+  let produceValue = () => {
+    subscriber.next(numbers[index++])
+    if (index < numbers.length) {
+      setTimeout(produceValue, 500);
+    } else {
+      subscriber.complete();
     }
-
-    subscriber.next(n);
-    subscriber.complete();
   }
-  subscriber.complete();
+
+  produceValue();
 })
 
-
-const myObserver = {
+source.subscribe({
   next: (x: number) => { 
     console.log(x) 
   },
   error: (e: Error) => console.log(e),
   complete: () => console.log('Complete'),
-}
+})
 
-function component() {
-  source.subscribe(myObserver)
-
-  sourceInstance.subscribe(myObserver)
-}
-
-component()
+source.subscribe({
+  next: (x: number) => { 
+    console.log(x) 
+  },
+  error: (e: Error) => console.log(e),
+  complete: () => console.log('Complete'),
+})

@@ -1,27 +1,35 @@
-import { fromEvent } from "rxjs";
-import { delay, map, filter } from "rxjs/operators";
+import { fromEvent, Observable } from "rxjs";
+import { delay, map, filter, switchMap } from "rxjs/operators";
 
-interface mouseTrack {
-  x: number;
-  y: number;
+interface IMovie {
+  title: string;
 }
 
-let circle = document.getElementById('circle');
-let source = fromEvent(document, 'mousemove').pipe(
-  map((e: MouseEvent) => {
-    return {x: e.clientX, y: e.clientY}
-  }),
-  filter((value: mouseTrack)=> value.x < 500)
-)
+let button = document.getElementById('button');
+let output = document.getElementById('output');
 
-function onNext(value: mouseTrack) {
-  console.log(value)
-  circle.style.left = `${value.x}px`;
-  circle.style.top = `${value.y}px`;
+let click = fromEvent(button, 'click');
+
+function load(url: string) {
+    let xhr = new XMLHttpRequest();
+    output.innerHTML = '';
+
+    xhr.addEventListener('load', () => {
+      let movies = JSON.parse(xhr.responseText);
+
+      movies.forEach((movie: IMovie) => {
+        let div = document.createElement('div');
+        div.innerText = movie.title;
+        output.appendChild(div);
+      })
+    })
+
+    xhr.open('GET', url)
+    xhr.send();
 }
 
-source.subscribe({
-  next: (value: mouseTrack) => onNext(value),
+click.subscribe({
+  next: () => load('../movies.json'),
   error: (e: Error) => console.log(e),
   complete: () => console.log(),
 })

@@ -10,26 +10,34 @@ let output = document.getElementById('output');
 
 let click = fromEvent(button, 'click');
 
-function load(url: string) {
-    let xhr = new XMLHttpRequest();
-    output.innerHTML = '';
+function load(url: string): Observable<any> {
+    return new Observable((subscriber) => {
+        let xhr = new XMLHttpRequest();
+        output.innerHTML = '';
+        
+        xhr.addEventListener('load', () => {
+            let data = JSON.parse(xhr.responseText);
+            subscriber.next(data);
+            subscriber.complete();
+        });
 
-    xhr.addEventListener('load', () => {
-      let movies = JSON.parse(xhr.responseText);
+        xhr.open('GET', url);
+        xhr.send();
+    });
+}
 
-      movies.forEach((movie: IMovie) => {
+function renderMovie(movies: IMovie[]) {
+    movies.forEach((movie: IMovie) => {
         let div = document.createElement('div');
         div.innerText = movie.title;
         output.appendChild(div);
-      })
-    })
-
-    xhr.open('GET', url)
-    xhr.send();
+    });
 }
 
-click.subscribe({
-  next: () => load('../movies.json'),
-  error: (e: Error) => console.log(e),
-  complete: () => console.log(),
-})
+click.pipe(
+  switchMap(() => load('../movies.json'))
+).subscribe({
+    next: renderMovie,
+    error: (e: Error) => console.log(e),
+    complete: () => console.log(),
+});

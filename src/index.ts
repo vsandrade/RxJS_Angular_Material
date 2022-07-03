@@ -1,5 +1,5 @@
 import { fromEvent, Observable } from "rxjs";
-import { delay, scan, retryWhen, takeWhile, switchMap } from "rxjs/operators";
+import { delay, scan, retryWhen, retry, takeWhile, mergeMap } from "rxjs/operators";
 
 interface IMovie {
   title: string;
@@ -28,7 +28,8 @@ function load(url: string): Observable<any> {
         xhr.open('GET', url);
         xhr.send();
     }).pipe(
-        retryWhen(retryStrategy({ attempt: 6, timeDelay: 400 }))
+        // retryWhen(retryStrategy({ attempt: 6, timeDelay: 400 }))
+        retry({count: 3, delay: 1000})
     )
 }
 
@@ -53,7 +54,7 @@ function renderMovie(movies: IMovie[]) {
 }
 
 click.pipe(
-  switchMap(() => load('./movies.json'))
+  mergeMap(() => load('./movies.json'))
 ).subscribe({
     next: renderMovie,
     error: (e: Error) => console.log(`Error: ${e}`),

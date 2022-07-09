@@ -36,10 +36,10 @@ function load(url: string): Observable<any> {
 function retryStrategy({ attempt = 3, timeDelay = 1000 }) {
     return (errors: Observable<any>) => {
         return errors.pipe(
-            scan((acc, value) => {
+            scan((acc: number) => {
                 return acc + 1
             }, 0),
-            takeWhile(acc => acc < attempt),
+            takeWhile((acc: number) => acc < attempt),
             delay(timeDelay)
         )
     }

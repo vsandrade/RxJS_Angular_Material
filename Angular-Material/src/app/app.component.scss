@@ -1,3 +1,18 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.sidenav {
+  width: 250px;
+  border: 1px solid black;
+}
+
+mat-sidenav-content {
+  height: 100vh;
+  border: 3px dashed blue;
+}
+
+mat-sidenav-container {
+  height: 100vh;
+  border: 2px solid red;
+}

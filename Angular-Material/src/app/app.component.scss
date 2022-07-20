@@ -4,15 +4,29 @@
 
 .sidenav {
   width: 250px;
-  border: 1px solid black;
 }
 
 mat-sidenav-content {
   height: 100vh;
-  border: 3px dashed blue;
 }
 
 mat-sidenav-container {
   height: 100vh;
-  border: 2px solid red;
+}
+
+.toolbar-menu {
+  position: fixed;
+  font-size: 1rem;
+  top: 0;
+}
+
+.toolbar-submenu {
+  height: 100px;
+  font-size: 2rem;
+  margin-top: 60px;
+}
+
+
+.title {
+  margin-bottom: 500px;
 }

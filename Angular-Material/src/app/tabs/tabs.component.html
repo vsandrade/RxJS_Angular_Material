@@ -1,0 +1,79 @@
+<h1>Simple Tabs</h1>
+
+<mat-tab-group
+mat-align-tabs="start"
+animationDuration="500ms">
+<mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="tab-icon">settings</mat-icon>
+    Settings
+  </ng-template>
+  Content
+</mat-tab>
+<mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="tab-icon">person</mat-icon>
+    Person
+  </ng-template>
+  Content
+</mat-tab>
+</mat-tab-group>
+
+<br><br>
+
+<h1>Tabs - Stretch and Below</h1>
+
+<mat-tab-group
+mat-stretch-tabs
+class="mat-elevation-z4"
+headerPosition="below">
+<mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="tab-icon">settings</mat-icon>
+    Settings
+  </ng-template>
+  Content
+</mat-tab>
+<mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="tab-icon">person</mat-icon>
+    Person
+  </ng-template>
+  Content
+</mat-tab>
+</mat-tab-group>
+
+<br><br>
+
+<h1>Tabs - Color</h1>
+
+<mat-tab-group
+class="mat-elevation-z4"
+headerPosition="below"
+color="warn"
+backgroundColor="primary">
+<mat-tab>
+  <div class="mat-tab">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">settings</mat-icon>
+      Settings
+    </ng-template>
+    <h1>Settings</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quibusdam minus quos totam cupiditate architecto odio enim dignissimos, adipisci fuga soluta quisquam? Veniam dolorem quas, aliquam non quidem iusto optio?
+    </p>
+  </div>
+</mat-tab>
+<mat-tab>
+  <div class="mat-tab">
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">person</mat-icon>
+      Person
+    </ng-template>
+    <h1>Person</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quibusdam minus quos totam cupiditate architecto odio enim dignissimos, adipisci fuga soluta quisquam? Veniam dolorem quas, aliquam non quidem iusto optio?
+    </p>
+  </div>
+</mat-tab>
+</mat-tab-group>

@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Hi {{data}}</h1>
+
+<mat-dialog-content>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae sapiente commodi harum. Aut autem magni laboriosam, incidunt temporibus ad error dolorum, vel quae sunt voluptate velit reiciendis quibusdam nostrum labore?</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+    close
+  </button>
+  <button mat-button color="warn" [mat-dialog-close]="'Bazinga from HTML'">
+    <mat-icon>close</mat-icon>
+    close
+  </button>
+</mat-dialog-actions>

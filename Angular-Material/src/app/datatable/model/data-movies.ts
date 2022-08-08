@@ -91,7 +91,7 @@ export const DATA_MOVIES: Movie[] = [
   { name: "Aliens", category: "Ficção científica", rating: 8.4, year: 1986, director: "James Cameron"},
   { name: "Predestination", category: "Ficção científica", rating: 7.4, year: 2014, director: "Michael Spierig, Peter Spierig"},
   { name: "E.T. the Extra-Terrestrial", category: "Ficção científica", rating: 7.9, year: 1982, director: "Steven Spielberg"},
-  { name: "Jurassic Parck", category: "Ficção científica", rating: 8.2, year: 1993, director: "Steven Spielberg"},
+  { name: "Jurassic Park", category: "Ficção científica", rating: 8.2, year: 1993, director: "Steven Spielberg"},
   { name: "Gone Girl", category: "Mistério", rating: 8.1, year: 2014, director: "David Fincher"},
   { name: "Shutter Island", category: "Mistério", rating: 8.2, year: 2010, director: "Martin Scorsese"},
   { name: "Inferno", category: "Mistério", rating: 6.2, year: 2016, director: "Ron Howard"},

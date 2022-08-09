@@ -1,1 +1,44 @@
-<p>datatable works!</p>
+<h1>Datatable</h1>
+
+<mat-form-field>
+  <mat-label>Filtro</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="ex.: Matrix" #input>
+</mat-form-field>
+
+<div class="mat-elevation-z4">
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Nome</mat-header-cell>
+      <mat-cell *matCellDef="let movie">{{movie.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="category" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Categoria</mat-header-cell>
+      <mat-cell *matCellDef="let movie">{{movie.category}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="rating">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Classificação</mat-header-cell>
+      <mat-cell *matCellDef="let movie">{{movie.rating}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="year">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Ano</mat-header-cell>
+      <mat-cell *matCellDef="let movie">{{movie.year}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="director">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Diretor</mat-header-cell>
+      <mat-cell *matCellDef="let movie">{{movie.director}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedNameColumns"></mat-header-row>
+    <mat-row *matRowDef="let movie; columns: displayedNameColumns"></mat-row>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="5">Não há dados para o filtro "{{input.value}}"</td>
+    </tr>
+  </mat-table>
+
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+</div>

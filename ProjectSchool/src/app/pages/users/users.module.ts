@@ -16,7 +16,7 @@ import { SharedModule } from '@app/shared/shared.module';
     MyDisciplinesComponent
   ],
   imports: [
-  CommonModule,
+    CommonModule,
     UsersMaterialModule,
     UsersRoutingModule,
     SharedModule

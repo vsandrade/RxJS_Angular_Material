@@ -9,12 +9,16 @@ export class ToolbarTitleComponent implements OnInit {
   @Input() title: string = "";
   iconFa = '';
   iconMat = '';
+  fontset = '';
 
   @Input()
   set icon(value: string) {
-    value.includes('fa-') ?
-      this.iconFa = `icon-space-mat ${value}` :
+    if (value.includes('fa-')) {
+      this.iconFa = `icon-space-mat ${value}`;
+      this.fontset = 'fa';
+    } else {
       this.iconMat = value;
+    }
   }
 
   constructor() { }

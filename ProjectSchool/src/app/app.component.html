@@ -11,13 +11,11 @@
   </mat-toolbar>
   <mat-nav-list>
     <a mat-list-item routerLink="/users">users</a>
-    <a mat-list-item routerLink="/formFieldInput">Form field input</a>
-    <a mat-list-item routerLink="/progBarSpinner">Progress bar and Spinner</a>
-    <a mat-list-item routerLink="/tabs">Tabs</a>
-    <a mat-list-item routerLink="/datepicker">Datepicker</a>
-    <a mat-list-item routerLink="/snackbar">Snackbar</a>
-    <a mat-list-item routerLink="/dialog">Dialog</a>
-    <a mat-list-item routerLink="/datatable">Datatable</a>
+    <a *ngFor="let item of items_menu" mat-list-item
+    [routerLink]="item.link" routerLinkActive="active">
+      <mat-icon fontSet="fa" [fontIcon]="item.icon"></mat-icon>
+      <span>{{item.label}}</span>
+    </a>
   </mat-nav-list>
   </mat-sidenav>
 

@@ -28,11 +28,15 @@
       [class.mat-elevation-z4]="applyShadow"
     >
       <button
+        matTooltip="{{sidenav.opened ? 'Fechar menu' : 'abrir menu'}}"
+        matTooltipPosition="right"
         mat-icon-button
         class="example-icon"
         (click)="sidenav.toggle()"
       >
-        <mat-icon>menu</mat-icon>
+        <mat-icon>
+          {{sidenav.opened ? 'close' : 'menu'}}
+        </mat-icon>
       </button>
       <span *ngIf="popText">My App</span>
       <span class="example-spacer"></span>

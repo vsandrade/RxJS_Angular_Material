@@ -1,3 +1,10 @@
+<mat-toolbar
+  class="toolbar-menu"
+  color="secondary"
+  [class.mat-elevation-z4]="applyShadow"
+>
+  <span *ngIf="popText">{{menuName}}</span>
+</mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav
     class="sidenav mat-elevation-z2"
@@ -22,33 +29,23 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar
-      class="toolbar-menu"
-      color="primary"
-      [class.mat-elevation-z4]="applyShadow"
-    >
-      <button
-        matTooltip="{{sidenav.opened ? 'Fechar menu' : 'abrir menu'}}"
-        matTooltipPosition="right"
-        mat-icon-button
-        class="example-icon"
-        (click)="sidenav.toggle()"
-      >
-        <mat-icon>
-          {{sidenav.opened ? 'close' : 'menu'}}
-        </mat-icon>
-      </button>
-      <span *ngIf="popText">My App</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar>
     <mat-toolbar class="toolbar-submenu" color="primary">
-      <span *ngIf="!popText">My App</span>
+      <div class="toolbar-submenu-top">
+        <button
+          matTooltip="{{sidenav.opened ? 'Fechar menu' : 'abrir menu'}}"
+          matTooltipPosition="right"
+          mat-icon-button
+          class="example-icon"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon>
+            {{sidenav.opened ? 'close' : 'menu'}}
+          </mat-icon>
+        </button>
+      </div>
+      <div class="toolbar-submenu-title">
+        <span *ngIf="!popText">{{menuName}}</span>
+      </div>
     </mat-toolbar>
 
     <router-outlet></router-outlet>

@@ -1,13 +1,3 @@
-
-
-.example-spacer {
-  flex: 1 1 auto;
-}
-
-.sidenav {
-  width: 250px;
-}
-
 mat-sidenav-content {
   height: 100vh;
 }
@@ -24,16 +14,23 @@ mat-sidenav-container {
 }
 
 .toolbar-submenu {
-  height: 100px;
+  height: 205px;
   font-size: 2rem;
-  margin-top: 60px;
+  margin-top: 0px;
+  padding: 60px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: #575757;
+
+  &-top {
+    height: 40px;
+  }
+
+  &-title {
+    margin: 30px 32px;
+  }
 }
-
-
-.title {
-  margin-bottom: 500px;
-}
-
 
 // - - - - sidebar - - - - //
 

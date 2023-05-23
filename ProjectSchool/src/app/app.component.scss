@@ -6,6 +6,10 @@ mat-sidenav-container {
   height: 100vh;
 }
 
+mat-toolbar-row {
+  padding: 0;
+}
+
 .toolbar-submenu {
   height: 205px;
   font-size: 2rem;
@@ -21,7 +25,7 @@ mat-sidenav-container {
   }
 
   &-title {
-    margin: 30px 32px;
+    padding: 52px 30px;
   }
 }
 

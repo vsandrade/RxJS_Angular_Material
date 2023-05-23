@@ -1,7 +1,38 @@
-<mat-toolbar
-  class="toolbar-menu"
-  color="secondary"
-  [class.mat-elevation-z4]="shadow"
->
-  <span *ngIf="popText">{{menuTitle}}</span>
+<mat-toolbar class="toolbar-menu" [class.mat-elevation-z4]="shadow">
+  <mat-toolbar-row>
+    <a href="/dashboard" mat-button class="logo">
+      <mat-icon fontSet="fa" fontIcon="fa-school"></mat-icon>
+      <span class="title" *ngIf="!popText">Project School</span>
+      <span class="title" *ngIf="popText">Project School - {{menuTitle}}</span>
+    </a>
+    <div class="content-center">
+      <button mat-button [matMenuTriggerFor]="beforeMenu">
+        <span>Menu</span>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #beforeMenu="matMenu">
+        <a href="" mat-menu-item>Test</a>
+        <a href="" mat-menu-item>Test</a>
+        <a href="" mat-menu-item>Test</a>
+      </mat-menu>
+      <div>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon class="space-right-icon">account_circle</mat-icon>
+          <span>Vinicius</span>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <a routerLink="/users/myProfile" mat-menu-item>
+            <mat-icon>person</mat-icon>
+            <span>Perfil</span>
+          </a>
+          <mat-divider></mat-divider>
+          <a routerLink="/users/myProfile" mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Sign out</span>
+          </a>
+        </mat-menu>
+      </div>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>

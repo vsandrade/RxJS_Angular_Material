@@ -11,9 +11,11 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #beforeMenu="matMenu">
-        <a href="" mat-menu-item>Test</a>
-        <a href="" mat-menu-item>Test</a>
-        <a href="" mat-menu-item>Test</a>
+        <a *ngFor="let item of items_menu" mat-menu-item
+          [routerLink]="item.link" routerLinkActive="active">
+        <mat-icon fontSet="fa" [fontIcon]="item.icon"></mat-icon>
+        <span>{{item.label}}</span>
+      </a>
       </mat-menu>
       <div>
         <button mat-button [matMenuTriggerFor]="menu">

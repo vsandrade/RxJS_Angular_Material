@@ -25,6 +25,7 @@ mat-toolbar-row {
   }
 
   &-title {
+    text-transform: capitalize;
     padding: 52px 30px;
   }
 }

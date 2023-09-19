@@ -1,3 +1,17 @@
+.form-field-category {
+  @media (min-width: 600px) {
+    padding-right: 10px;
+  }
+}
+
+::ng-deep .mat-paginator-container {
+  padding: 0px 0px !important;
+}
+
+::ng-deep .mat-paginator-range-label {
+  padding: 0px 0px !important;
+}
+
 mat-card {
   margin-bottom: 4px;
   box-shadow: 0px 1px 2px 1px rgb(0 0 0 / 25%);

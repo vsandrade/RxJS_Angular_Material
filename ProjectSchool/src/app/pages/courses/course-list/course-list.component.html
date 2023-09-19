@@ -1,3 +1,30 @@
+<form [formGroup]="form">
+  <div fxLayout="row wrap">
+    <mat-form-field class="form-field-category" fxFlex="24" fxFlex.xs="100" fxFlex.sm="24">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="category">
+        <mat-option>-Selecione-</mat-option>
+        <mat-option *ngFor="let item of categoryValue" [value]="item">
+          {{item}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field fxFlex="50" fxFlex.xs="100" fxFlex.sm="50">
+      <mat-label>Filtro</mat-label>
+      <input matInput formControlName="search">
+      <button matSuffix mat-icon-button (click)="doSearch()">
+        <mat-icon matSuffix>search</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-paginator fxFlex="26" fxFlex.xs="100" fxFlex.sm="26"
+      [length]="100"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+    >
+    </mat-paginator>
+  </div>
+</form>
+
 <div fxLayout="row wrap" fxLayoutGap="16px grid">
   <div fxFlex="20" fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33" fxFlex.lg="25"
     *ngFor="let course of courseList">

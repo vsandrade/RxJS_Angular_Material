@@ -1,0 +1,373 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Desenvolvimento Web Avançado com React",
+      "category": "Tecnologia",
+      "rating": 4.7,
+      "year": 2022,
+      "professor": "Lucas Oliveira",
+      "description": "Aprenda React de forma avançada. (Tecnologia)"
+    },
+    {
+      "id": 2,
+      "name": "Machine Learning e Inteligência Artificial",
+      "category": "Tecnologia",
+      "rating": 4.9,
+      "year": 2023,
+      "professor": "Ana Beatriz Silva",
+      "description": "Domine ML e IA. (Tecnologia)"
+    },
+    {
+      "id": 3,
+      "name": "História da Arte Contemporânea",
+      "category": "Arte",
+      "rating": 4.3,
+      "year": 2020,
+      "professor": "Gustavo Santos",
+      "description": "Exploração artística moderna. (Arte)"
+    },
+    {
+      "id": 4,
+      "name": "Cozinha Gourmet: Técnicas Avançadas",
+      "category": "Culinária",
+      "rating": 4.8,
+      "year": 2021,
+      "professor": "Mariana Costa",
+      "description": "Técnicas avançadas na culinária. (Culinária)"
+    },
+    {
+      "id": 5,
+      "name": "Estratégias Avançadas de Investimento",
+      "category": "Finanças",
+      "rating": 4.7,
+      "year": 2022,
+      "professor": "Rafael Fernandes",
+      "description": "Investimentos sólidos. (Finanças)"
+    },
+    {
+      "id": 6,
+      "name": "Psicologia Clínica: Abordagens Modernas",
+      "category": "Psicologia",
+      "rating": 4.6,
+      "year": 2021,
+      "professor": "Camila Silva",
+      "description": "Abordagens modernas em psicologia. (Psicologia)"
+    },
+    {
+      "id": 7,
+      "name": "Marketing Digital para E-commerce",
+      "category": "Marketing",
+      "rating": 4.5,
+      "year": 2020,
+      "professor": "Fábio Augusto",
+      "description": "Estratégias eficazes de marketing. (Marketing)"
+    },
+    {
+      "id": 8,
+      "name": "Fotografia de Paisagens Naturais",
+      "category": "Fotografia",
+      "rating": 4.4,
+      "year": 2019,
+      "professor": "Luciana Oliveira",
+      "description": "Captura da beleza da natureza. (Fotografia)"
+    },
+    {
+      "id": 9,
+      "name": "Escrita Criativa: Contos e Poesia",
+      "category": "Escrita",
+      "rating": 4.5,
+      "year": 2022,
+      "professor": "Leonardo Barbosa",
+      "description": "Histórias e poesias inspiradoras. (Escrita)"
+    },
+    {
+      "id": 10,
+      "name": "Composição Musical Avançada",
+      "category": "Música",
+      "rating": 4.9,
+      "year": 2023,
+      "professor": "Patrícia Costa",
+      "description": "Crie músicas excepcionais. (Música)"
+    },
+    {
+      "id": 11,
+      "name": "Ecologia e Conservação Ambiental",
+      "category": "Ciências Ambientais",
+      "rating": 4.2,
+      "year": 2019,
+      "professor": "Paulo Mendes",
+      "description": "Proteja nosso planeta. (Ciências Ambientais)"
+    },
+    {
+      "id": 12,
+      "name": "Design Sustentável na Moda",
+      "category": "Moda",
+      "rating": 4.6,
+      "year": 2021,
+      "professor": "Bianca Fernandes",
+      "description": "Moda e estilo sustentáveis. (Moda)"
+    },
+    {
+      "id": 13,
+      "name": "Comunicação Eficaz no Ambiente de Trabalho",
+      "category": "Comunicação",
+      "rating": 4.7,
+      "year": 2022,
+      "professor": "Carolina Santos",
+      "description": "Habilidades de comunicação no trabalho. (Comunicação)"
+    },
+    {
+      "id": 14,
+      "name": "Filosofia Política Contemporânea",
+      "category": "Filosofia",
+      "rating": 4.3,
+      "year": 2020,
+      "professor": "Pedro Almeida",
+      "description": "Debate político moderno. (Filosofia)"
+    },
+    {
+      "id": 15,
+      "name": "Yoga para Equilíbrio e Bem-Estar",
+      "category": "Saúde",
+      "rating": 4.8,
+      "year": 2021,
+      "professor": "Luiz Oliveira",
+      "description": "Bem-estar mental e físico. (Saúde)"
+    },
+    {
+      "id": 16,
+      "name": "Desenvolvimento Avançado de Aplicativos Web com Vue.js",
+      "category": "Tecnologia",
+      "rating": 4.6,
+      "year": 2023,
+      "professor": "Isabella Santos",
+      "description": "Explore o desenvolvimento avançado de aplicativos web usando Vue.js. (Tecnologia)"
+    },
+    {
+      "id": 17,
+      "name": "Fundamentos de Cibersegurança",
+      "category": "Tecnologia",
+      "rating": 4.8,
+      "year": 2023,
+      "professor": "David Garcia",
+      "description": "Domine os fundamentos da cibersegurança. (Tecnologia)"
+    },
+    {
+      "id": 19,
+      "name": "Técnicas Modernas de Escultura",
+      "category": "Arte",
+      "rating": 4.5,
+      "year": 2023,
+      "professor": "André Costa",
+      "description": "Explore técnicas modernas de escultura e arte. (Arte)"
+    },
+    {
+      "id": 18,
+      "name": "Arte Abstrata Moderna: Técnicas e Tendências",
+      "category": "Arte",
+      "rating": 4.5,
+      "year": 2022,
+      "professor": "Sofia Rodriguez",
+      "description": "Aprofunde-se nas técnicas e tendências da arte abstrata moderna. (Arte)"
+    },
+    {
+      "id": 20,
+      "name": "Fusão Culinária Internacional",
+      "category": "Culinária",
+      "rating": 4.7,
+      "year": 2022,
+      "professor": "Javier Martinez",
+      "description": "Fusão de sabores e técnicas culinárias internacionais. (Culinária)"
+    },
+    {
+      "id": 21,
+      "name": "Estratégias de Investimento em Imóveis",
+      "category": "Finanças",
+      "rating": 4.6,
+      "year": 2023,
+      "professor": "Maria Hernandez",
+      "description": "Aprenda estratégias eficazes de investimento em imóveis. (Finanças)"
+    },
+    {
+      "id": 22,
+      "name": "Psicologia Positiva e Bem-Estar",
+      "category": "Psicologia",
+      "rating": 4.7,
+      "year": 2022,
+      "professor": "Sofia Garcia",
+      "description": "Explore a ciência do bem-estar e da psicologia positiva. (Psicologia)"
+    },
+    {
+      "id": 23,
+      "name": "Marketing de Influência na Era Digital",
+      "category": "Marketing",
+      "rating": 4.8,
+      "year": 2023,
+      "professor": "Laura Martins",
+      "description": "Aproveite o poder do marketing de influência na era digital. (Marketing)"
+    },
+    {
+      "id": 24,
+      "name": "Fotografia de Paisagens Avançada",
+      "category": "Fotografia",
+      "rating": 4.5,
+      "year": 2022,
+      "professor": "Daniel Lopez",
+      "description": "Domine técnicas avançadas na fotografia de paisagens. (Fotografia)"
+    },
+    {
+      "id": 25,
+      "name": "Escrita Criativa: Contos e Poesia",
+      "category": "Escrita",
+      "rating": 4.6,
+      "year": 2023,
+      "professor": "Isabel Rodrigues",
+      "description": "Crie histórias curtas e poesia inspiradora. (Escrita)"
+    },
+    {
+      "id": 26,
+      "name": "Composição Musical Avançada",
+      "category": "Música",
+      "rating": 4.9,
+      "year": 2023,
+      "professor": "Antonio Silva",
+      "description": "Componha peças musicais excepcionais. (Música)"
+    },
+    {
+      "id": 27,
+      "name": "Estratégias de Conservação da Biodiversidade",
+      "category": "Ciências Ambientais",
+      "rating": 4.7,
+      "year": 2022,
+      "professor": "Luisa Mendes",
+      "description": "Estratégias para conservar a biodiversidade. (Ciências Ambientais)"
+    },
+    {
+      "id": 28,
+      "name": "Design de Moda Sustentável",
+      "category": "Moda",
+      "rating": 4.8,
+      "year": 2023,
+      "professor": "Carlos Fernandes",
+      "description": "Projete moda sustentável e estilosa. (Moda)"
+    },
+    {
+      "id": 29,
+      "name": "Comunicação Eficaz no Ambiente de Trabalho",
+      "category": "Comunicação",
+      "rating": 4.6,
+      "year": 2022,
+      "professor": "Isabel Oliveira",
+      "description": "Aprimore as habilidades de comunicação no ambiente de trabalho. (Comunicação)"
+    },
+    {
+      "id": 30,
+      "name": "Filosofia Política Contemporânea",
+      "category": "Filosofia",
+      "rating": 4.5,
+      "year": 2023,
+      "professor": "Ricardo Alves",
+      "description": "Exploração da filosofia política contemporânea. (Filosofia)"
+    },
+    {
+      "id": 31,
+      "name": "Mindfulness and Stress Management",
+      "category": "Saúde",
+      "rating": 4.9,
+      "year": 2022,
+      "professor": "Mariana Silva",
+      "description": "Achieve mindfulness and manage stress effectively. (Saúde)"
+    },
+    {
+      "id": 31,
+      "name": "Mindfulness e Gerenciamento do Estresse",
+      "category": "Saúde",
+      "rating": 4.9,
+      "year": 2022,
+      "professor": "Mariana Silva",
+      "description": "Alcance mindfulness e gerencie o estresse eficazmente. (Saúde)"
+    },
+    {
+      "id": 32,
+      "name": "Desenvolvimento Avançado de Aplicativos Móveis com Flutter",
+      "category": "Tecnologia",
+      "rating": 4.8,
+      "year": 2023,
+      "professor": "Pedro Oliveira",
+      "description": "Domine o desenvolvimento avançado de aplicativos móveis com Flutter. (Tecnologia)"
+    },
+    {
+      "id": 33,
+      "name": "Ciência de Dados para Análise de Negócios",
+      "category": "Tecnologia",
+      "rating": 4.7,
+      "year": 2022,
+      "professor": "Ana Santos",
+      "description": "Aplique ciência de dados para análise de negócios eficaz. (Tecnologia)"
+    },
+    {
+      "id": 34,
+      "name": "Técnicas Modernas de Escultura",
+      "category": "Arte",
+      "rating": 4.5,
+      "year": 2023,
+      "professor": "André Costa",
+      "description": "Explore técnicas modernas de escultura e arte. (Arte)"
+    },
+    {
+      "id": 35,
+      "name": "Arte da Confeitaria Gourmet",
+      "category": "Culinária",
+      "rating": 4.9,
+      "year": 2022,
+      "professor": "Elena Rodriguez",
+      "description": "Domine a arte da confeitaria gourmet. (Culinária)"
+    },
+    {
+      "id": 36,
+      "name": "Gestão Financeira Estratégica",
+      "category": "Finanças",
+      "rating": 4.8,
+      "year": 2023,
+      "professor": "Daniel Fernandes",
+      "description": "Desenvolva habilidades de gestão financeira estratégica. (Finanças)"
+    },
+    {
+      "id": 37,
+      "name": "Psicologia Cognitiva Avançada",
+      "category": "Psicologia",
+      "rating": 4.7,
+      "year": 2022,
+      "professor": "Laura Almeida",
+      "description": "Aprofunde-se na psicologia cognitiva avançada. (Psicologia)"
+    },
+    {
+      "id": 38,
+      "name": "Estratégia de Marketing Digital",
+      "category": "Marketing",
+      "rating": 4.6,
+      "year": 2023,
+      "professor": "Carlos Oliveira",
+      "description": "Elabore estratégias eficazes de marketing digital. (Marketing)"
+    },
+    {
+      "id": 39,
+      "name": "Expedições de Fotografia de Vida Selvagem",
+      "category": "Fotografia",
+      "rating": 4.9,
+      "year": 2022,
+      "professor": "Isabella Lopez",
+      "description": "Capture a beleza da vida selvagem através da fotografia. (Fotografia)"
+    },
+    {
+      "id": 40,
+      "name": "Oficina de Escrita de Ficção Científica",
+      "category": "Escrita",
+      "rating": 4.8,
+      "year": 2023,
+      "professor": "Lucas Rodrigues",
+      "description": "Mergulhe no mundo da escrita de ficção científica. (Escrita)"
+    }
+  ]
+}

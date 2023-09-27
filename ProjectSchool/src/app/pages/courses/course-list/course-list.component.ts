@@ -1,23 +1,23 @@
 import { HttpResponse } from '@angular/common/http';
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PageEvent } from '@angular/material/paginator';
 import { CoursesService } from '@app/services/courses.service';
 import { Category, Course } from '@app/shared/models/course';
-import { debounceTime, Subscription } from 'rxjs';
+import { Observable, debounceTime, pipe, tap } from 'rxjs';
 
 @Component({
   selector: 'app-course-list',
   templateUrl: './course-list.component.html',
   styleUrls: ['./course-list.component.scss'],
 })
-export class CourseListComponent implements OnInit, OnDestroy {
+export class CourseListComponent implements OnInit {
   public courseList: Course[] = [];
   private courseService = inject(CoursesService);
   private fb = inject(FormBuilder);
   public categoryValue = Object.values(Category);
   public form!: FormGroup;
-  public sub!: Subscription;
+  public courseData!: Observable<any>;
 
   totalCount: number = 0;
   currentPage: number = 1;
@@ -51,10 +51,6 @@ export class CourseListComponent implements OnInit, OnDestroy {
     this.getCourses(1, 5, '', '');
   }
 
-  ngOnDestroy(): void {
-    this.sub.unsubscribe()
-  }
-
   public doSearch(): void {
     this.getCourses(
       this.currentPage,
@@ -70,13 +66,16 @@ export class CourseListComponent implements OnInit, OnDestroy {
     category: string,
     search: string
   ): void {
-    this.sub = this.courseService
+    this.courseData = this.courseService
       .get(currentPage, pageSize, category, search)
-      .subscribe((response: HttpResponse<any>) => {
-        this.courseList = response.body as Course[];
-        let totalCount = response.headers.get('X-Total-Count');
-        this.totalCount = totalCount ? Number(totalCount) : 0;
-      });
+      .pipe(
+        tap((response: HttpResponse<any>) => {
+            this.courseList = response.body as Course[];
+            let totalCount = response.headers.get('X-Total-Count');
+            this.totalCount = totalCount ? Number(totalCount) : 0;
+          })
+      )
+      // .subscribe();
   }
 
   public handlePageEvent(e: PageEvent): void {

@@ -27,7 +27,7 @@
   </div>
 </form>
 
-<div fxLayout="row wrap" fxLayoutGap="16px grid">
+<div fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="courseData | async; else loading">
   <div fxFlex="20" fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33" fxFlex.lg="25"
     *ngFor="let course of courseList">
     <mat-card class="mat-elevation-z4">
@@ -54,3 +54,7 @@
     </mat-card>
   </div>
 </div>
+<ng-template #loading>
+  <mat-spinner color="accent"></mat-spinner>
+</ng-template>
+

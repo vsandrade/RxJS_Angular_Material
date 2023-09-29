@@ -7,8 +7,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   exports: [
     MatIconModule,
@@ -19,7 +19,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSelectModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatProgressSpinnerModule
+    MatProgressBarModule,
+    MatSnackBarModule
   ],
   declarations: [],
   providers: [

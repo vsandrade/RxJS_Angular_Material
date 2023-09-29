@@ -2,9 +2,10 @@ import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PageEvent } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CoursesService } from '@app/services/courses.service';
 import { Category, Course } from '@app/shared/models/course';
-import { Observable, debounceTime, pipe, tap } from 'rxjs';
+import { EMPTY, Observable, catchError, debounceTime, pipe, tap } from 'rxjs';
 
 @Component({
   selector: 'app-course-list',
@@ -15,6 +16,7 @@ export class CourseListComponent implements OnInit {
   public courseList: Course[] = [];
   private courseService = inject(CoursesService);
   private fb = inject(FormBuilder);
+  private snackbar = inject(MatSnackBar)
   public categoryValue = Object.values(Category);
   public form!: FormGroup;
   public courseData!: Observable<any>;
@@ -73,9 +75,14 @@ export class CourseListComponent implements OnInit {
             this.courseList = response.body as Course[];
             let totalCount = response.headers.get('X-Total-Count');
             this.totalCount = totalCount ? Number(totalCount) : 0;
-          })
+          }),
+        catchError((err: string) => {
+          this.snackbar.open(err, 'Close', {
+            duration: 5000
+          });
+          return EMPTY;
+        })
       )
-      // .subscribe();
   }
 
   public handlePageEvent(e: PageEvent): void {

@@ -1,7 +1,8 @@
-import { fromEvent, Observable } from "rxjs";
-import { delay, scan, retryWhen, retry, takeWhile, mergeMap } from "rxjs/operators";
+import { EMPTY, fromEvent, Observable, of, throwError } from "rxjs";
+import { catchError, map, mergeMap } from "rxjs/operators";
 
 interface IMovie {
+  id: number;
   title: string;
 }
 
@@ -14,11 +15,13 @@ function load(url: string): Observable<any> {
     return new Observable((subscriber) => {
         let xhr = new XMLHttpRequest();
         output.innerHTML = '';
-        
+
         xhr.addEventListener('load', () => {
             if (xhr.status == 200) {
-                let data = JSON.parse(xhr.responseText);
-                subscriber.next(data);
+                let data = JSON.parse(xhr.responseText) as IMovie[];
+                data.forEach((movie: IMovie) => {
+                    subscriber.next(movie);
+                });
                 subscriber.complete();
             } else {
                 subscriber.error(xhr.statusText);
@@ -27,34 +30,29 @@ function load(url: string): Observable<any> {
 
         xhr.open('GET', url);
         xhr.send();
-    }).pipe(
-        // retryWhen(retryStrategy({ attempt: 6, timeDelay: 400 }))
-        retry({count: 3, delay: 1000})
-    )
+    })
 }
 
-function retryStrategy({ attempt = 3, timeDelay = 1000 }) {
-    return (errors: Observable<any>) => {
-        return errors.pipe(
-            scan((acc: number) => {
-                return acc + 1
-            }, 0),
-            takeWhile((acc: number) => acc < attempt),
-            delay(timeDelay)
-        )
-    }
-}
-
-function renderMovie(movies: IMovie[]) {
-    movies.forEach((movie: IMovie) => {
-        let div = document.createElement('div');
-        div.innerText = movie.title;
-        output.appendChild(div);
-    });
+function renderMovie(movie: IMovie) {
+    let div = document.createElement('div');
+    div.innerText = movie.title;
+    output.appendChild(div);
 }
 
 click.pipe(
-  mergeMap(() => load('./movies.json'))
+  mergeMap(() => load('../movies.json').pipe(
+    map((movie: IMovie) => {
+        if (movie.id === 3)
+            throw 'O id 3 É maligno';
+        return movie;
+    }),
+    catchError((err: Error) => {
+        // return of({id: 25, title: 'Matrix'})
+        // throw new Error(`${err}`)
+        return throwError(() => `${err}`)
+        // return EMPTY;
+    })
+))
 ).subscribe({
     next: renderMovie,
     error: (e: Error) => console.log(`Error: ${e}`),
